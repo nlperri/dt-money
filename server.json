@@ -15,6 +15,22 @@
       "category": "Alimentação",
       "price": 50,
       "createdAt": "2023-02-27T17:10:02.697Z"
+    },
+    {
+      "description": "Desenvolvimento de app",
+      "price": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-02-28T18:17:07.204Z",
+      "id": 3
+    },
+    {
+      "description": "Açaí",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-02-28T18:45:54.629Z",
+      "id": 4
     }
   ]
 }
