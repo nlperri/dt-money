@@ -5,6 +5,7 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { TransactionsContext } from '../../../../contexts/TransactionsContext'
 import { useContextSelector } from 'use-context-selector'
+import { useCallback } from 'react'
 const searchFormSchema = zod.object({
   query: zod.string(),
 })
@@ -27,9 +28,12 @@ export function SearchForm() {
     resolver: zodResolver(searchFormSchema),
   })
 
-  async function handleSearchTransactions(data: SearchFormInputs) {
-    await fetchTransactions(data.query)
-  }
+  const handleSearchTransactions = useCallback(
+    async (data: SearchFormInputs) => {
+      await fetchTransactions(data.query)
+    },
+    []
+  )
 
   return (
     <SearchFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
